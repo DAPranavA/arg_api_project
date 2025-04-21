@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Manager</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div id="auth-section">
+    <h2 id="auth-title">Login</h2>
+    <form id="auth-form">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit" id="auth-button">Login</button>
+    </form>
+    <p id="toggle-auth">Need an account? <a href="#">Register</a></p>
+    <p id="auth-error" class="error"></p>
+  </div>
+
+  <div id="app-section" class="hidden">
+    <button id="logout">Logout</button>
+    
+    <section id="books-section" class="content-section">
+      <h2>Books</h2>
+      <!-- Book Filter Section -->
+      <div class="filter-section">
+        <h3>Filter Books</h3>
+        <div class="filter-controls">
+          <input type="text" id="name-filter" placeholder="Filter by name" />
+          <input type="text" id="author-filter" placeholder="Filter by author" />
+          <input type="text" id="publisher-filter" placeholder="Filter by publisher" />
+          <div class="filter-buttons">
+            <button id="apply-book-filters">Apply Filters</button>
+            <button id="clear-book-filters">Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book Form -->
+      <form id="book-form">
+        <h3>Add New Book</h3>
+        <input type="text" id="book_name" placeholder="Name" required />
+        <input type="text" id="author" placeholder="Author" required />
+        <input type="text" id="publisher" placeholder="Publisher" required />
+        <input type="number" id="pages" placeholder="Pages" required />
+        <textarea id="description" placeholder="Description"></textarea>
+        <button type="submit">Add Book</button>
+      </form>
+      <p id="book-error" class="error"></p>
+      <ul id="book-list"></ul>
+    </section>
+
+    <section id="tasks-section" class="content-section">
+      <h2>Tasks</h2>
+      <!-- Task Filter Section -->
+      <div class="filter-section">
+        <h3>Filter Tasks</h3>
+        <div class="filter-controls">
+          <input type="text" id="task-title-filter" placeholder="Filter by title" />
+          <select id="task-status-filter">
+            <option value="">All Tasks</option>
+            <option value="true">Completed</option>
+            <option value="false">Pending</option>
+          </select>
+          <div class="filter-buttons">
+            <button id="apply-task-filters">Apply Filters</button>
+            <button id="clear-task-filters">Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task Form -->
+      <form id="task-form">
+        <h3>Add New Task</h3>
+        <input type="text" id="task-title" placeholder="Task title" required />
+        <textarea id="task-description" placeholder="Task description"></textarea>
+        <button type="submit">Add Task</button>
+      </form>
+      <p id="task-error" class="error"></p>
+      <ul id="task-list"></ul>
+    </section>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
