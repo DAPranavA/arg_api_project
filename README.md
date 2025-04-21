@@ -119,9 +119,54 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 ## API Documentation
 
 Once running, you can access:
+- Web Interface → http://localhost:8000
 - Swagger UI: http://localhost:8000/docs
 - ReDoc: http://localhost:8000/redoc
+
+## Running Tests
+pytest test_api.py
+All API routes, authentication, and database operations are unit tested using TestClient
+
+Environment Variables (.env)
+
+# PostgreSQL
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_DB=bookmanager
+
+# SQLAlchemy URL for app use
+DATABASE_URL=postgresql://postgres:postgres@db:5432/bookmanager
+
+# JWT
+SECRET_KEY=your-secret-key
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+
+## Common Docker Commands
+# Start the app
+docker-compose up
+
+# Rebuild after changes
+docker-compose up --build
+
+# Run in background
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop + remove containers
+docker-compose down
+
+# Reset volumes (data loss)
+docker-compose down -v
+
 
 ## License
 
 MIT
+
+## Author
+
+Pranav Asalekar
